@@ -8,7 +8,7 @@ Simple bare bones scoped one way data binding.
 
 ## Usage
 
-https://jsfiddle.net/megazear7/oug4a8p2/2/
+https://jsfiddle.net/megazear7/oug4a8p2/6/
 
 ```html
 <div class="container1">
