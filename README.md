@@ -4,6 +4,10 @@
 
 ### Usage
 
+https://jsfiddle.net/megazear7/oug4a8p2/2/
+
+<script async src="//jsfiddle.net/megazear7/oug4a8p2/2/embed/html,result/dark/"></script>
+
 ```html
 <div class="container1">
   <h1 data-dominero="title">Default Title 1</h1>
