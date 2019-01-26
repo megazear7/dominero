@@ -4,7 +4,7 @@ Simple bare bones scoped one way data binding.
 
 ## Installation
 
-`npm i dominero`
+`npm install dominero`
 
 ## Usage
 
