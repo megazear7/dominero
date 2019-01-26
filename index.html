@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <body>
-
   <div class="container1">
     <h1 data-dominero="title">Default Title 1</h1>
     <p data-dominero="description">Default Description 1</p>
@@ -13,35 +12,37 @@
   </div>
 
   <script type="text/javascript">
-    const createRenderer = element => {
-      return property => {
-        element.querySelector(`[data-dominero="${property}"]`).innerHTML = state[property];
-      };
+    const createRenderer = (element, state) => property => {
+      element.querySelector(`[data-dominero="${property}"]`).innerHTML = state[property];
     };
 
-    const createState = (state) => {
-      return new Proxy(state, {
+    const createState = (state, render) => {
+      let dominite = new Proxy(state, {
         set(target, property, value) {
           console.log(property);
           target[property] = value;
-          this.render(property);
+          render(property);
           return true;
         }
       });
+
+      Object.keys(state).forEach(key => render(key));
+
+      return dominite;
     };
 
-    const render = createRenderer(document.querySelector('.container1'));
+    const dominero = (element, state) => {
+      return createState(state, createRenderer(element, state));
+    };
 
-    const state = createState({
+    const container1 = dominero(document.querySelector('.container1'), {
       title: "Hello, World!",
-      description: "One way data binding is all a go!"
+      description: "Scoped one way data binding is all a go!"
     });
 
-    render("title");
-    render("description");
-
-    console.log(state);
+    const container2 = dominero(document.querySelector('.container2'), {
+      description: "Another scope of one way data binding"
+    });
   </script>
-
 </body>
 </html>
