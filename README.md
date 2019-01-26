@@ -20,19 +20,19 @@ https://jsfiddle.net/megazear7/oug4a8p2/2/
   <h1 data-dominero="title">Default Title 2</h1>
   <p data-dominero="description">Default Description 2</p>
 </div>
+```
 
-<script type="module">
-  import dominero from 'dominero';
+```js
+import dominero from 'dominero';
 
-  const container1 = dominero(document.querySelector('.container1'), {
-    title: "Hello, World!",
-    description: "Scoped one way data binding is all a go!"
-  });
+const container1 = dominero(document.querySelector('.container1'), {
+  title: "Hello, World!",
+  description: "Scoped one way data binding is all a go!"
+});
 
-  const container2 = dominero(document.querySelector('.container2'), {
-    description: "Another scope of one way data binding"
-  });
+const container2 = dominero(document.querySelector('.container2'), {
+  description: "Another scope of one way data binding"
+});
 
-  container2.title = "I was updated";
-</script>
+container2.title = "I was updated";
 ```
