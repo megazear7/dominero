@@ -1,12 +1,14 @@
-### Installation
+# Dominero
+
+Simple bare bones scoped one way data binding.
+
+## Installation
 
 `npm i dominero`
 
-### Usage
+## Usage
 
 https://jsfiddle.net/megazear7/oug4a8p2/2/
-
-<script async src="//jsfiddle.net/megazear7/oug4a8p2/2/embed/html,result/dark/"></script>
 
 ```html
 <div class="container1">
