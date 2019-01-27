@@ -2,21 +2,26 @@ const createRenderer = (element, state) => property => {
   element.querySelector(`[data-dominero="${property}"]`).innerHTML = state[property];
 };
 
-const createState = (state, render) => {
+const createState = (state, renderers) => {
   let dominite = new Proxy(state, {
     set(target, property, value) {
-      console.log(property);
       target[property] = value;
-      render(property);
+      renderers.forEach(render => render(property));
       return true;
     }
   });
 
-  Object.keys(state).forEach(key => render(key));
+  Object.keys(state).forEach(key => renderers.forEach(render => render(key)));
 
   return dominite;
 };
 
-export default (element, state) => {
-  return createState(state, createRenderer(element, state));
+export default (elements, state) => {
+  if (Array.isArray(elements)) {
+    return createState(state, elements.map(element => createRenderer(element, state)));
+  } else if (elements.constructor.name === "NodeList") {
+    return createState(state, [...elements].map(element => createRenderer(element, state)));
+  } else {
+    return createState(state, [createRenderer(elements, state)]);
+  }
 };

@@ -1,10 +1,10 @@
 {
   "name": "dominero",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Scoped one way data binding",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "npx babel index.js --out-file .node-index.js; ./node_modules/mocha/bin/mocha;"
   },
   "repository": {
     "type": "git",

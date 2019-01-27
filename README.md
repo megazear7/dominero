@@ -45,10 +45,9 @@ container2.title = "I was updated";
 
 Add unit tests for the following scenarios and make code updates as needed.
 
-1. One JSON object connected to multiple elements. What happens right now if I do this?
-2. Nested elements - the outer element should not update the inner element. We need to add some `data-dominero-connected` attribute to the connected element so that updates on the outer element can know not to update properties on the inner element. What should the rules be in this scenario?
-3. Property data binding. `data-dominero-href="url"`. Then the `href` property would get updates with the `url` property of the given object.
-4. Nested properties. `data-dominero="subObject.someProperty"`.
+1. Nested elements - the outer element should not update the inner element. We need to add some `data-dominero-connected` attribute to the connected element so that updates on the outer element can know not to update properties on the inner element. What should the rules be in this scenario?
+2. Property data binding. `data-dominero-href="url"`. Then the `href` property would get updates with the `url` property of the given object.
+3. Nested properties. `data-dominero="subObject.someProperty"`.
 
 After these features are added we should spin up a website that introduces it and explains how to use it. Here are the key features:
 
