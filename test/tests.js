@@ -3,6 +3,23 @@ const jsdom = require('jsdom');
 const dominero = require('./../.node-index.js').default;
 const { JSDOM } = jsdom;
 
+describe('simple text dominero container', function () {
+  const dom = new JSDOM(`
+    <div class="container1" data-dominero="text"></div>
+  `, {
+    url: 'http://localhost'
+  });
+
+  const container1 = dominero(dom.window.document.querySelector('.container1'), {
+    text: 'Hello, World!',
+  });
+
+  it('initializes a property', function () {
+    expect(dom.window.document.querySelector('.container1').textContent)
+    .eql('Hello, World!')
+  });
+});
+
 describe('one dominero container', function () {
   const dom = new JSDOM(`
     <div class="container1">

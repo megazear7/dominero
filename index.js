@@ -1,5 +1,13 @@
 const createRenderer = (element, state) => property => {
-  element.querySelector(`[data-dominero="${property}"]`).innerHTML = state[property];
+  const selector = `[data-dominero="${property}"]`;
+  if (element.matches(selector)) {
+    element.textContent = state[property];
+  } else {
+    const matchingElement = element.querySelector(selector);
+    if (matchingElement) {
+      matchingElement.textContent = state[property];
+    }
+  }
 };
 
 const createState = (state, renderers) => {
