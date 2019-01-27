@@ -4,7 +4,7 @@
   "description": "Scoped one way data binding",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/mocha/bin/mocha"
   },
   "repository": {
     "type": "git",
@@ -14,5 +14,11 @@
     "Databinding"
   ],
   "author": "Alex Lockhart",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "jsdom": "^13.2.0",
+    "mocha": "^5.2.0"
+  }
 }

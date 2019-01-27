@@ -37,9 +37,13 @@ const container2 = dominero(document.querySelector('.container2'), {
 container2.title = "I was updated";
 ```
 
+## Testing
+
+`npm test`
+
 ## TODO
 
-Add unit tests for the following scenarios. (1) and (2) are already done.
+Add unit tests for the following scenarios and make code updates as needed.
 
 1. Single element
 2. Two elements side by side
