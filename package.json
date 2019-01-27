@@ -1,6 +1,6 @@
 {
   "name": "dominero",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Scoped one way data binding",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,9 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "chai": "^4.2.0",
     "jsdom": "^13.2.0",
     "mocha": "^5.2.0"
