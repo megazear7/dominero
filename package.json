@@ -4,7 +4,7 @@
   "description": "Scoped one way data binding",
   "main": "index.js",
   "scripts": {
-    "test": "npx babel index.js --out-file .node-index.js; ./node_modules/mocha/bin/mocha;"
+    "test": "babel index.js --out-file .node-index.js; ./node_modules/mocha/bin/mocha;"
   },
   "repository": {
     "type": "git",
