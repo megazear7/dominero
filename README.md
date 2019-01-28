@@ -14,7 +14,6 @@ Simple bare bones scoped one way data binding.
 ## Usage
 
 https://jsfiddle.net/megazear7/oug4a8p2/15/
-<script async src="//jsfiddle.net/megazear7/oug4a8p2/15/embed/html,result/"></script>
 
 ```html
 <div class="container1">

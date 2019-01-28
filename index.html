@@ -1,18 +1,156 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <h1>Dominero</h1>
-  <ul>
-    <li>Expressive - everything that Dominero does is visible in the markup</li>
-    <li>Scoped to the provided elements</li>
-    <li>Nesting of multiple root elements</li>
-    <li>Named data bound attributes so the same object property name can update different elements.</li>
-  </ul>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
 
-  <h2>Installation</h2>
-  "npm install dominero"
+    section {
+      padding: 0 60px 60px 60px;
+    }
 
-  <h2>Usage</h2>
-  <script async src="//jsfiddle.net/megazear7/oug4a8p2/15/embed/html,result/"></script>
+    footer {
+      padding: 60px;
+      background: #f5f5f5;
+    }
+
+    h2 {
+      color: #FF4470;
+      margin-bottom: 30px;
+      font-size: 80px;
+      line-height: 96px;
+      font-weight: normal;
+    }
+
+    h1, h3 {
+      color: #FF4470;
+      margin-bottom: 20px;
+      font-size: 40px;
+      line-height: 48px;
+      font-weight: normal;
+    }
+
+    h4 {
+      color: #FF4470;
+      margin-bottom: 10px;
+      font-size: 25px;
+      line-height: 32px;
+      font-weight: normal;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      padding: 0 0 10px 0;
+    }
+
+    ul.interactive {
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    ul.interactive li {
+      display: flex;
+      line-height: 50px;
+      padding: 5px;
+      border-bottom: 1px solid #ccc;
+      text-decoration: none;
+      font-size: 18px;
+      color: var(--app-dark-text-color);
+      transition: font-size 0.3s ease, background-color 0.3s ease;
+    }
+
+    ul.interactive li span {
+      font-size: 18px;
+    }
+
+    ul.interactive li:last-child {
+      border: none;
+    }
+
+    ul.interactive li:hover {
+      font-size: 30px;
+    }
+
+    pre {
+      line-height: 22px;
+      font-size: 18px;
+    }
+
+    pre .code {
+      background-color: #f5f5f5;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    pre .copy-to-clipboard {
+      cursor: pointer;
+      padding-left: 20px;
+    }
+  </style>
+
+  <section>
+    <h2>Dominero</h2>
+    <p>Simple bare bones scoped one way data binding.</p>
+  </section>
+
+  <section>
+    <h1>About Dominero</h1>
+    <ul class="interactive">
+      <li>Expressive binding<span> - everything that Dominero does is visible in the markup</span></li>
+      <li>Scoped binding<span> to the provided elements</span></li>
+      <li>Nested binding<span> of multiple root elements</span></li>
+      <li>Named bindind<span> the same object property name can update different elements.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Installation</h3>
+    <pre><span class="code">npm install dominero</span><span class="copy-to-clipboard">Copy to Clipboard</span></pre>
+  </section>
+
+  <section>
+    <h2>Usage</h2>
+    <script async src="https://jsfiddle.net/megazear7/oug4a8p2/15/embed/html,result/"></script>
+  </section>
+
+  <footer>
+    <h4>Links</h4>
+    <ul>
+      <li><a href="https://github.com/megazear7/dominero">Github</a></li>
+      <li><a href="https://www.npmjs.com/package/dominero">NPM</a></li>
+    </ul>
+    <hr>
+    <h4>Authors</h4>
+    <p><a href="https://www.alexlockhart.me/">Alex Lockhart</a></p>
+  </footer>
+
+  <script type="text/javascript">
+    const copyToClipboards = document.querySelectorAll(".copy-to-clipboard");
+
+    copyToClipboards.forEach(copyToClipboard => {
+      copyToClipboard.onclick = () => document.execCommand("copy");
+
+      copyToClipboard.addEventListener("copy", event => {
+        event.preventDefault();
+        if (event.clipboardData) {
+          event.clipboardData.setData("text/plain", copyToClipboard.parentNode.childNodes[0].textContent);
+          let textContent = copyToClipboard.textContent;
+          copyToClipboard.textContent = "Copied!";
+          setTimeout(() => copyToClipboard.textContent = textContent, 3000);
+          console.log(event.clipboardData.getData("text"))
+        }
+      });
+    });
+  </script>
 </body>
 </html>
