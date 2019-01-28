@@ -1,5 +1,37 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="About Dominero JS.">
+  <link rel="icon" href="icons/favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#FF4470">
+
+  <!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Dominero">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Dominero">
+
+  <!-- Homescreen icons -->
+  <link rel="apple-touch-icon" href="icons/icon-640x640.png">
+  <link rel="apple-touch-icon" sizes="640x640" href="icons/icon-640x640.png">
+
+  <!-- Tile icon for Windows 8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="icons/icon-640x640.png">
+  <meta name="msapplication-TileColor" content="#FF4470">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <!-- Default twitter cards -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@username">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="dominero">
+  <meta property="og:image" content="icons/icon-640x640.png" />
+</head>
 <body>
   <style>
     body {
@@ -16,9 +48,14 @@
       background: #f5f5f5;
     }
 
+    .intro {
+      background: #f5f5f5;
+      padding-top: 60px;
+    }
+
     h2 {
       color: #FF4470;
-      margin-bottom: 30px;
+      margin: 0 0 30px 0;
       font-size: 80px;
       line-height: 96px;
       font-weight: normal;
@@ -96,9 +133,26 @@
       cursor: pointer;
       padding-left: 20px;
     }
+
+    hr {
+      overflow: visible;
+      padding: 0;
+      border: none;
+      border-top: medium double #a5a5a5;
+      color: #a5a5a5;
+      text-align: center;
+    }
+
+    hr:after {
+      content: "§";
+      display: inline-block;
+      position: relative;
+      top: -11px;
+      font-size: 16px;
+    }
   </style>
 
-  <section>
+  <section class="intro">
     <h2>Dominero</h2>
     <p>Simple bare bones scoped one way data binding.</p>
   </section>
@@ -119,7 +173,7 @@
   </section>
 
   <section>
-    <h2>Usage</h2>
+    <h3>Usage</h3>
     <script async src="https://jsfiddle.net/megazear7/oug4a8p2/15/embed/html,result/"></script>
   </section>
 
