@@ -8,17 +8,17 @@ Simple bare bones scoped one way data binding.
 
 ## Usage
 
-https://jsfiddle.net/megazear7/oug4a8p2/6/
+https://jsfiddle.net/megazear7/oug4a8p2/11/
 
 ```html
 <div class="container1">
-  <h1 data-dominero="title">Default Title 1</h1>
-  <p data-dominero="description">Default Description 1</p>
+  <h1 data-dominero-title>Default Title 1</h1>
+  <p data-dominero-description>Default Description 1</p>
 </div>
 
 <div class="container2">
-  <h1 data-dominero="title">Default Title 2</h1>
-  <p data-dominero="description">Default Description 2</p>
+  <h1 data-dominero-title>Default Title 2</h1>
+  <p data-dominero-description>Default Description 2</p>
 </div>
 ```
 

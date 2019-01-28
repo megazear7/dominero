@@ -1,16 +1,25 @@
 const createRenderer = (element, state, name) => property => {
   const selector = typeof name === 'undefined'
-    ? `[data-dominero="${property}"]`
-    : `[data-dominero="${property} % ${name}"]`;
-    
-  if (element.matches(selector)) {
-    element.textContent = state[property];
-  } else {
-    const matchingElement = element.querySelector(selector);
-    if (matchingElement) {
-      matchingElement.textContent = state[property];
+    ? `[data-dominero-${property}]`
+    : `[data-dominero-${property}="% ${name}"]`;
+
+  const matchingElements = element.matches(selector)
+    ? [element]
+    : [...element.querySelectorAll(selector)];
+
+  matchingElements.forEach(matchingElement => {
+    let attributeConfig = matchingElement.getAttribute(`data-dominero-${property}`);
+
+    if (attributeConfig.startsWith('-> ')) {
+      let attribute = attributeConfig.includes(' % ')
+        ? attributeConfig.substr(3).split(' % ')[0]
+        : attributeConfig.substr(3);
+
+      matchingElement.setAttribute(attribute, state[property]);
+    } else {
+      matchingElement.textContent = state[property]
     }
-  }
+  });
 };
 
 const createState = (state, renderers) => {
