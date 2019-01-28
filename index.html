@@ -118,16 +118,6 @@
       border: none;
     }
 
-    @media screen and (min-width: 1100px) {
-      ul.interactive li {
-        height: 30px;
-      }
-
-      ul.interactive li:hover {
-        font-size: 30px;
-      }
-    }
-
     pre {
       line-height: 22px;
       font-size: 18px;
@@ -166,6 +156,40 @@
       padding: 0 60px;
     }
 
+    .small-img {
+      position: absolute;
+      right: -140px;
+      top: -140px;
+    }
+
+    .large-img {
+      display: none;
+    }
+
+    @media screen and (min-width: 1100px) {
+      ul.interactive li {
+        height: 30px;
+      }
+
+      ul.interactive li:hover {
+        font-size: 30px;
+      }
+
+      .large-img {
+        display: block;
+        position: absolute;
+        right: -210px;
+        top: -210px;
+      }
+
+      .small-img {
+        display: none;
+        position: absolute;
+        right: -210px;
+        top: -210px;
+      }
+    }
+
     @media screen and (max-width: 640px) {
       section {
         padding: 0px 20px 60px 20px;
@@ -201,6 +225,9 @@
     }
   </style>
 
+  <img class="small-img" src="icons/icon-320x320.png">
+  <img class="large-img" src="icons/icon-720x720.png">
+
   <section class="intro">
     <h2>Dominero</h2>
     <p>One way data binding. Clean and simple.</p>
@@ -209,10 +236,10 @@
   <section>
     <h1>About Dominero</h1>
     <ul class="interactive">
-      <li>Expressive binding - everything that Dominero does is visible in the markup</li>
       <li>Scoped binding to the provided elements</li>
       <li>Nested binding of multiple root elements</li>
       <li>Named binding of the same object property name can update different elements.</li>
+      <li>Expressive binding - everything that Dominero does is visible in the markup</li>
     </ul>
   </section>
 
