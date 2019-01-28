@@ -13,7 +13,7 @@ Simple bare bones scoped one way data binding.
 
 ## Usage
 
-https://jsfiddle.net/megazear7/oug4a8p2/13/
+https://jsfiddle.net/megazear7/oug4a8p2/15/
 
 ```html
 <div class="container1">
@@ -42,11 +42,21 @@ const container2 = dominero(document.querySelector('.container2'), {
 container2.title = "I was updated";
 ```
 
+Currently the full list of available features is documented in the test cases.
+
+## Distribution
+
+For ES5 use the "dist/index-es5.js" file.
+Otherwise use the ES6 module located in the "dist/index.js" file.
+
 ## Testing
+
 `npm test`
 
-#### A few notes
+## Build new release
 
-1. View the test suite for all of the available features.
-2. For ES5 use the "dist/index-es5.js" file.
-3. Otherwise use the es6 module located in the "dist/index.js" file.
+1. Update version in package.json
+1. Ensure the `npm test` test cases are all passing
+1. `npm run build`
+1. `git commit` the updated version number.
+1. `npm publish`
