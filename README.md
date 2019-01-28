@@ -2,6 +2,11 @@
 
 Simple bare bones scoped one way data binding.
 
+1. Expressive - everything that Dominero does is visible in the markup
+1. Scoped to the provided elements
+1. Nesting of multiple root elements
+1. Named data bound attributes so the same object property name can update different element attributes.
+
 ## Installation
 
 `npm install dominero`
@@ -37,19 +42,8 @@ const container2 = dominero(document.querySelector('.container2'), {
 container2.title = "I was updated";
 ```
 
+View the test suite for all of the available features.
+
 ## Testing
 
 `npm test`
-
-## TODO
-
-Add unit tests for the following scenarios and make code updates as needed.
-
-1. Property data binding. `data-dominero-href="url"`. Then the `href` property would get updates with the `url` property of the given object.
-
-After these features are added we should spin up a website that introduces it and explains how to use it. Here are the key features:
-
-1. One way data binding.
-2. Expressive. Everything dominero does is expressed in data attributes in the dom. No magic happens behind the scenes.
-3. Scoping to a specific element.
-4. Nesting of data bound elements.
