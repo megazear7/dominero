@@ -42,8 +42,11 @@ const container2 = dominero(document.querySelector('.container2'), {
 container2.title = "I was updated";
 ```
 
-View the test suite for all of the available features.
-
 ## Testing
-
 `npm test`
+
+#### A few notes
+
+1. View the test suite for all of the available features.
+2. For ES5 use the "dist/index-es5.js" file.
+3. Otherwise use the es6 module located in the "dist/index.js" file.

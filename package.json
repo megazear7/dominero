@@ -1,10 +1,11 @@
 {
   "name": "dominero",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "Scoped one way data binding",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "babel index.js --out-file .node-index.js; ./node_modules/mocha/bin/mocha;"
+    "test": "babel --no-babelrc src/index.js --out-file .node-index.js --plugins=transform-es2015-modules-commonjs; ./node_modules/mocha/bin/mocha;",
+    "build": "BABEL_ENV=production babel src/index.js --out-file dist/index-es5.js;./node_modules/uglify-es/bin/uglifyjs src/index.js -o dist/index.js;"
   },
   "repository": {
     "type": "git",
@@ -19,9 +20,12 @@
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "babel-minify": "^0.5.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "chai": "^4.2.0",
     "jsdom": "^13.2.0",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "uglify-es": "^3.3.9"
   }
 }
