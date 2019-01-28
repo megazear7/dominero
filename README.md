@@ -1,6 +1,6 @@
 # Dominero
 
-Simple bare bones scoped one way data binding.
+One way data binding. Clean and simple.
 
 https://dominero.alexlockhart.me
 
@@ -44,7 +44,7 @@ const container2 = dominero(document.querySelector('.container2'), {
 container2.title = "I was updated";
 ```
 
-Currently the full list of available features is documented in the test cases.
+For more documentation refer to [the documentation](https://dominero.alexlockhart.me).
 
 ## Distribution
 

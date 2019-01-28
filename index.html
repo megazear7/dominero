@@ -109,6 +109,7 @@
 
     ul.interactive li span {
       font-size: 18px;
+      padding-left: 5px;
     }
 
     ul.interactive li:last-child {
@@ -142,6 +143,7 @@
       border-top: medium double #a5a5a5;
       color: #a5a5a5;
       text-align: center;
+      margin: 30px 0;
     }
 
     hr:after {
@@ -151,11 +153,15 @@
       top: -11px;
       font-size: 16px;
     }
+
+    .padded {
+      padding: 0 60px;
+    }
   </style>
 
   <section class="intro">
     <h2>Dominero</h2>
-    <p>Simple bare bones scoped one way data binding.</p>
+    <p>One way data binding. Clean and simple.</p>
   </section>
 
   <section>
@@ -164,7 +170,7 @@
       <li>Expressive binding<span> - everything that Dominero does is visible in the markup</span></li>
       <li>Scoped binding<span> to the provided elements</span></li>
       <li>Nested binding<span> of multiple root elements</span></li>
-      <li>Named bindind<span> the same object property name can update different elements.</span></li>
+      <li>Named binding<span> of the same object property name can update different elements.</span></li>
     </ul>
   </section>
 
@@ -173,10 +179,52 @@
     <pre><span class="code">npm install dominero</span><span class="copy-to-clipboard">Copy to Clipboard</span></pre>
   </section>
 
+  <h3 class="padded">Usage</h3>
+
   <section>
-    <h3>Usage</h3>
-    <p class="codepen" data-height="360" data-theme-id="light" data-default-tab="js,result" data-user="megazear7" data-slug-hash="WPxojQ" style="height: 360px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="Simple Dominero Example">
+    <h4>Bind text content</h4>
+    <p class="codepen" data-height="212" data-theme-id="light" data-default-tab="html,result" data-user="megazear7" data-slug-hash="GzqWBG" style="height: 212px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="Simple Dominero Example">
+      <span>See the Pen <a href="https://codepen.io/megazear7/pen/GzqWBG/">
+      Simple Dominero Example</a> by Alex Lockhart (<a href="https://codepen.io/megazear7">@megazear7</a>)
+      on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+  </section>
+
+  <section>
+    <h4>Bind attributes</h4>
+    <p class="codepen" data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="megazear7" data-slug-hash="WPxojQ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="Simple Dominero Example">
       <span>See the Pen <a href="https://codepen.io/megazear7/pen/WPxojQ/">
+      Simple Dominero Example</a> by Alex Lockhart (<a href="https://codepen.io/megazear7">@megazear7</a>)
+      on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+  </section>
+
+  <section>
+    <h4>Bind multiple sections of html</h4>
+    <p class="codepen" data-height="350" data-theme-id="light" data-default-tab="js,result" data-user="megazear7" data-slug-hash="XOKMyK" style="height: 350px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="Simple Dominero Example">
+      <span>See the Pen <a href="https://codepen.io/megazear7/pen/XOKMyK/">
+      Simple Dominero Example</a> by Alex Lockhart (<a href="https://codepen.io/megazear7">@megazear7</a>)
+      on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+  </section>
+
+  <section>
+    <h4>Bind one object to multiple sections of html</h4>
+    <p class="codepen" data-height="353" data-theme-id="light" data-default-tab="html,result" data-user="megazear7" data-slug-hash="WPxpmq" style="height: 353px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="Simple Dominero Example">
+      <span>See the Pen <a href="https://codepen.io/megazear7/pen/WPxpmq/">
+      Simple Dominero Example</a> by Alex Lockhart (<a href="https://codepen.io/megazear7">@megazear7</a>)
+      on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+  </section>
+
+  <section>
+    <h4>Nest sections of bound data and provide bound naming to prevent collision</h4>
+    <p class="codepen" data-height="446" data-theme-id="light" data-default-tab="html,result" data-user="megazear7" data-slug-hash="ZwOKEO" style="height: 446px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="Simple Dominero Example">
+      <span>See the Pen <a href="https://codepen.io/megazear7/pen/ZwOKEO/">
       Simple Dominero Example</a> by Alex Lockhart (<a href="https://codepen.io/megazear7">@megazear7</a>)
       on <a href="https://codepen.io">CodePen</a>.</span>
     </p>

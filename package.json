@@ -1,6 +1,6 @@
 {
   "name": "dominero",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Scoped one way data binding",
   "main": "dist/index.js",
   "scripts": {
