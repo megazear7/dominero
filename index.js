@@ -1,5 +1,8 @@
-const createRenderer = (element, state) => property => {
-  const selector = `[data-dominero="${property}"]`;
+const createRenderer = (element, state, name) => property => {
+  const selector = typeof name === 'undefined'
+    ? `[data-dominero="${property}"]`
+    : `[data-dominero="${property} % ${name}"]`;
+    
   if (element.matches(selector)) {
     element.textContent = state[property];
   } else {
@@ -24,12 +27,12 @@ const createState = (state, renderers) => {
   return dominite;
 };
 
-export default (elements, state) => {
+export default (elements, state, options = { }) => {
   if (Array.isArray(elements)) {
-    return createState(state, elements.map(element => createRenderer(element, state)));
-  } else if (elements.constructor.name === "NodeList") {
-    return createState(state, [...elements].map(element => createRenderer(element, state)));
+    return createState(state, elements.map(element => createRenderer(element, state, options.name)));
+  } else if (elements.constructor.name === 'NodeList') {
+    return createState(state, [...elements].map(element => createRenderer(element, state, options.name)));
   } else {
-    return createState(state, [createRenderer(elements, state)]);
+    return createState(state, [createRenderer(elements, state, options.name)]);
   }
 };

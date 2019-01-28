@@ -137,3 +137,51 @@ describe('connect one dominero object to multiple dom containers', function () {
     .eql('I was updated')
   });
 });
+
+describe('nested containers', function () {
+  const dom = new JSDOM(`
+    <div class="outer">
+      <div class="inner">
+        <p data-dominero="title % inner" class="inner-title">Default Title 2</p>
+        <p data-dominero="description % inner" class="inner-description">Default Description 2</p>
+      </div>
+      <p data-dominero="title % outer" class="outer-title">Default Title 1</p>
+      <p data-dominero="description % outer" class="outer-description">Default Description 1</p>
+    </div>
+  `, {
+    url: 'http://localhost'
+  });
+
+  const outer = dominero(dom.window.document.querySelector('.outer'), {
+    title: 'Outer title initial',
+    description: 'Outer description initial'
+  }, { name: "outer" });
+
+  const inner = dominero(dom.window.document.querySelector('.inner'), {
+    title: 'Inner title initial',
+    description: 'Inner description initial'
+  }, { name: "inner" });
+
+  outer.title = 'Outer title updated';
+  inner.description = 'Inner description updated';
+
+  it('initializes an outer property', function () {
+    expect(dom.window.document.querySelector('.outer-description').textContent)
+    .eql('Outer description initial')
+  });
+
+  it('initializes an inner property', function () {
+    expect(dom.window.document.querySelector('.inner-title').textContent)
+    .eql('Inner title initial')
+  });
+
+  it('updates an outer property', function () {
+    expect(dom.window.document.querySelector('.outer-title').textContent)
+    .eql('Outer title updated')
+  });
+
+  it('updates an inner property', function () {
+    expect(dom.window.document.querySelector('.inner-description').textContent)
+    .eql('Inner description updated')
+  });
+});
