@@ -2,6 +2,8 @@
 
 Simple bare bones scoped one way data binding.
 
+https://dominero.alexlockhart.me
+
 1. Expressive - everything that Dominero does is visible in the markup
 1. Scoped to the provided elements
 1. Nesting of multiple root elements
@@ -13,7 +15,7 @@ Simple bare bones scoped one way data binding.
 
 ## Usage
 
-https://jsfiddle.net/megazear7/oug4a8p2/15/
+https://codepen.io/megazear7/pen/WPxojQ
 
 ```html
 <div class="container1">
