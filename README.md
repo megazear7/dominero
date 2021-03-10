@@ -72,3 +72,9 @@ npm run docs:serve
 ```
 
 Then open [localhost:8000](https://localhost:8000)
+
+## Support
+
+[Buy me a coffee](https://www.buymeacoffee.com/alexlockhart)
+
+[Patreon](https://www.patreon.com/alexlockhart)
