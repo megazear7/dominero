@@ -4,6 +4,7 @@
   "description": "Scoped one way data binding",
   "main": "dist/index.js",
   "scripts": {
+    "docs:serve": "es-dev-server --node-resolve --watch",
     "test": "babel --no-babelrc src/index.js --out-file .node-index.js --plugins=transform-es2015-modules-commonjs; ./node_modules/mocha/bin/mocha;",
     "build": "BABEL_ENV=production babel src/index.js --out-file dist/index-es5.js;./node_modules/uglify-es/bin/uglifyjs src/index.js -o dist/index.js;"
   },
@@ -24,6 +25,7 @@
     "babel-minify": "^0.5.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "chai": "^4.2.0",
+    "es-dev-server": "^2.1.0",
     "jsdom": "^13.2.0",
     "mocha": "^5.2.0",
     "uglify-es": "^3.3.9"

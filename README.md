@@ -62,3 +62,13 @@ Otherwise use the ES6 module located in the "dist/index.js" file.
 1. `npm run build`
 1. `git commit` the updated version number.
 1. `npm publish`
+
+## Documentation
+
+### Serve
+
+```
+npm run docs:serve
+```
+
+Then open [localhost:8000](https://localhost:8000)
